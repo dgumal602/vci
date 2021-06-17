@@ -1,0 +1,305 @@
+﻿FUNCTION_BLOCK "Runtime_test"
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+   VAR 
+      FB_LTIME_opt : LReal;
+      FB_LTIME_notopt : LReal;
+      MEM_RUNTIME_opt : LReal;   //  память для вимірювання часу циклу
+      MEM_RUNTIME_notopt : LReal;   //  память для вимірювання часу циклу
+      FB_LTIME_notopt_tmp : LReal;
+      FB_LTIME_opt_tmp : LReal;
+      qwerty { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Word;
+      State { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Struct
+         Error { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Error_1 { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Warning_1 { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Maintenance_1 { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Interlocked_1 { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Ready_1 { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Closed_1 { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Opened_1 { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Closing_1 { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Warning { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Maintenance { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Interlocked { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Ready { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Closed { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Opened { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Closing { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+      END_STRUCT;
+      State_1 { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Struct
+         Error { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Error_1 { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Warning_2 { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Warning_1 { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Interlocked_1 { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Ready_1 { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Closed_1 { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Opened_1 { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Closing_1 { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Warning { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Maintenance { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Interlocked { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Ready { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Closed { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Opened { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Closing { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+      END_STRUCT;
+      qwerty_1 { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Word;
+      State_2 { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Struct
+         Error_1 { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Warning_2 { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Warning_1 { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Interlocked_1 { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Ready_1 { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Closed_1 { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Opened_1 { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Closing_1 { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Warning { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Maintenance { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Interlocked { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Ready { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Closed { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Opened { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+         Closing { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+      END_STRUCT;
+      qwerty_2 { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Word;
+   END_VAR
+
+   VAR_TEMP 
+      i : Int;
+      j : Int;
+      udt_temp : "UDT_ACB_ETI";
+      ZeroB : Byte;
+      ZeroW : Word;
+      ZeroD : DWord;
+      tmpQB : Struct
+         CmdClose : Bool;   // Motor commanded forward /Activation output / State transferred to physical output (1 = on)
+         CmdOpen : Bool;
+         CmdHorn : Bool;
+         Error : Bool;   // This output indicates whether there’s an error condition in the motor
+         Warning : Bool;   // This output indicates whether there’s an warning condition in the motor
+         Maintenance : Bool;   // This output indicates whether there’s an maintenance message in the motor
+         Auto : Bool;   // 1= Automatic operating mode active
+         Local : Bool;
+         Closed : Bool;   // 1= Motor running forward feedback
+         Opened : Bool;   // 1= Motor running forward reverse
+         CmdResetACB : Bool;
+         spare1 : Bool;
+         spare2 : Bool;
+         spare3 : Bool;
+         spare4 : Bool;
+         spare5 : Bool;
+      END_STRUCT;
+   END_VAR
+
+
+BEGIN
+	REGION _name_
+	    ;
+	    #ZeroB := 0;
+	    #ZeroW := 0;
+	    #ZeroD := 0;
+	    // #FB_LTIME_notopt_tmp := RUNTIME(#MEM_RUNTIME_notopt) * 1000.0;
+	    
+	    FOR #j := 1 TO 30000 DO
+	        // FOR #i := 1 TO 499 DO
+	        SCATTER(IN := #ZeroW,
+	                OUT => #tmpQB);
+	        
+	        // END_FOR;
+	    END_FOR;
+	    
+	    
+	    // #FB_LTIME_notopt := RUNTIME(#MEM_RUNTIME_notopt) * 1000.0;
+	END_REGION
+	// 
+	
+	
+	// REGION _name_
+	//     ;
+	//     #ZeroB := 0;
+	//     #ZeroW := 0;
+	//     #ZeroD := 0;
+	//     //#FB_LTIME_notopt_tmp := RUNTIME(#MEM_RUNTIME_notopt) * 1000.0;
+	    
+	//     FOR #j := 1 TO 30000 DO
+	//         // FOR #i := 1 TO 499 DO
+	//             #tmpQB.CmdClose := FALSE;//Motor commanded forward /Activation output / State transferred to physical output (1 = on)
+	//             #tmpQB.CmdOpen := FALSE;//Motor commanded reverse / Activation output / State transferred to physical output (1 = on)
+	//             #tmpQB.CmdHorn := FALSE;
+	//             #tmpQB.Error := FALSE;//This output indicates whether there’s an error condition in the motor
+	//             #tmpQB.Warning := FALSE;//This output indicates whether there’s an warning condition in the motor
+	//             #tmpQB.Maintenance := FALSE;//This output indicates whether there’s an maintenance message in the motor
+	//             #tmpQB.Auto := FALSE;//1= Automatic operating mode active
+	//             #tmpQB.Local := FALSE;
+	//             #tmpQB.Closed := FALSE;//1= Motor running forward feedback
+	//             #tmpQB.Opened := FALSE;//1= Motor running forward reverse
+	//             // // #tmpQB.Closed := FALSE;//1= Motor running forward feedback
+	//             // // #tmpQB.Opened := FALSE;//1= Motor running forward reverse
+	//             // // #tmpQB.Closed := FALSE;//1= Motor running forward feedback
+	//             // // #tmpQB.Opened := FALSE;//1= Motor running forward reverse
+	//             // // #tmpQB.Closed := FALSE;//1= Motor running forward feedback
+	//             // // #tmpQB.Opened := FALSE;//1= Motor running forward reverse
+	//         // END_FOR;
+	//     END_FOR;
+	    
+	    
+	//     //#FB_LTIME_notopt := RUNTIME(#MEM_RUNTIME_notopt) * 1000.0;
+	// END_REGION
+	
+	// "Runtime_test_1_DB"();
+	// "Runtime_test_2_DB_not"();
+	// REGION _name_
+	//     ;
+	//     #FB_LTIME_opt_tmp := RUNTIME(#MEM_RUNTIME_opt) * 1000.0;
+	    
+	//     FOR #j := 1 TO 40 DO
+	//         FOR #i := 1 TO 499 DO
+	
+	//             #udt_temp.State.Error := "Opimized".opimized[#i].State.Error;
+	//             #udt_temp.State.Warning := "Opimized".opimized[#i].State.Warning;
+	            
+	//             #udt_temp.State.Error := NOT #udt_temp.State.Error;
+	//             #udt_temp.State.Warning := #udt_temp.State.Error AND NOT #udt_temp.State.Warning;
+	            
+	            
+	//             "Opimized".opimized[#i].State.Error := #udt_temp.State.Error;
+	//             "Opimized".opimized[#i].State.Warning:=#udt_temp.State.Warning;
+	
+	//             // ;
+	//         END_FOR;
+	//     END_FOR;
+	    
+	    
+	//     #FB_LTIME_opt := RUNTIME(#MEM_RUNTIME_opt) * 1000.0;
+	// END_REGION
+	
+	
+	// REGION _name_
+	//     ;
+	//     #FB_LTIME_notopt_tmp := RUNTIME(#MEM_RUNTIME_notopt) * 1000.0;
+	    
+	//     FOR #j := 1 TO 40 DO
+	//         FOR #i := 1 TO 499 DO
+	//             "Opimized".opimized[#i].State.Error :="Opimized".opimized[#i].State.Error;
+	//             "Opimized".opimized[#i].State.Warning :="Opimized".opimized[#i].State.Warning AND NOT "Opimized".opimized[#i].State.Error;
+	
+	//         END_FOR;
+	//     END_FOR;
+	    
+	    
+	//     #FB_LTIME_notopt := RUNTIME(#MEM_RUNTIME_notopt) * 1000.0;
+	// END_REGION
+	
+	
+	// REGION _name_
+	//     ;
+	//     #FB_LTIME_opt_tmp := RUNTIME(#MEM_RUNTIME_opt) * 1000.0;
+	
+	//     FOR #j := 1 TO 5 DO
+	//         FOR #i := 1 TO 499 DO
+	//             #udt_temp := "Opimized".opimized[#i];
+	//             "Opimized".opimized[#i] := #udt_temp;
+	//             // Statement section FOR
+	//             // "Opimized".opimized[#i] := "Opimized".opimized[#i + 1];
+	//             // "Opimized".opimized[#i].State.Error := NOT "Opimized".opimized[#i].State.Error;
+	//             // "Opimized".opimized[#i].State.Warning := "Opimized".opimized[#i].State.Error AND NOT "Opimized".opimized[#i].State.Error;
+	//             // "Opimized".opimized[#i].State.Interlocked := "Opimized".opimized[#i].State.Error AND NOT "Opimized".opimized[#i].State.Error;
+	//             // "Opimized".opimized[#i].State.Ready := "Opimized".opimized[#i].State.Error AND NOT "Opimized".opimized[#i].State.Error;
+	//             // "Opimized".opimized[#i].State.Ready := "Opimized".opimized[#i].State.Error AND NOT "Opimized".opimized[#i].State.Error;
+	//             // "Opimized".opimized[#i].State.Opening := "Opimized".opimized[#i].State.Error AND NOT "Opimized".opimized[#i].State.Error;
+	//             // "Opimized".opimized[#i].State.InCmdAutoClose := "Opimized".opimized[#i].State.Error AND NOT "Opimized".opimized[#i].State.Error;
+	            
+	//             // ;
+	//         END_FOR;
+	//     END_FOR;
+	
+	
+	//     #FB_LTIME_opt := RUNTIME(#MEM_RUNTIME_opt) * 1000.0;
+	// END_REGION
+	
+	
+	
+	// REGION _name_
+	
+	//     #FB_LTIME_notopt_tmp := RUNTIME(#MEM_RUNTIME_notopt) * 1000.0;
+	//     FOR #j := 1 TO 5 DO
+	//         FOR #i := 1 TO 499 DO
+	            
+	//             #udt_temp := "Not_opimized".Not_opimized[#i];
+	//             "Not_opimized".Not_opimized[#i] := #udt_temp;
+	            
+	//             // Statement section FOR
+	//             // "Not_opimized".Not_opimized[#i] := "Not_opimized".Not_opimized[#i + 1];
+	
+	//             // "Not_opimized".Not_opimized[#i].State.Error := NOT "Not_opimized".Not_opimized[#i].State.Error;
+	//             // "Not_opimized".Not_opimized[#i].State.Warning := "Not_opimized".Not_opimized[#i].State.Error AND NOT "Not_opimized".Not_opimized[#i].State.Error;
+	//             // "Not_opimized".Not_opimized[#i].State.Interlocked := "Not_opimized".Not_opimized[#i].State.Error AND NOT "Not_opimized".Not_opimized[#i].State.Error;
+	//             // "Not_opimized".Not_opimized[#i].State.Ready := "Not_opimized".Not_opimized[#i].State.Error AND NOT "Not_opimized".Not_opimized[#i].State.Error;
+	//             // "Not_opimized".Not_opimized[#i].State.Ready := "Not_opimized".Not_opimized[#i].State.Error AND NOT "Not_opimized".Not_opimized[#i].State.Error;
+	//             // "Not_opimized".Not_opimized[#i].State.Opening := "Not_opimized".Not_opimized[#i].State.Error AND NOT "Not_opimized".Not_opimized[#i].State.Error;
+	//             // "Not_opimized".Not_opimized[#i].State.InCmdAutoClose := "Not_opimized".Not_opimized[#i].State.Error AND NOT "Not_opimized".Not_opimized[#i].State.Error;
+	//             // ;
+	
+	//         END_FOR;
+	//     END_FOR;
+	
+	
+	//     #FB_LTIME_notopt := RUNTIME(#MEM_RUNTIME_notopt) * 1000.0;
+	// END_REGION
+	
+	
+	
+	// REGION _name_
+	//     ;
+	//     #FB_LTIME_opt_tmp := RUNTIME(#MEM_RUNTIME_opt) * 1000.0;
+	    
+	//     FOR #j := 1 TO 10 DO
+	//         FOR #i := 1 TO 499 DO
+	//             // Statement section FOR
+	//             // "Opimized".opimized[#i] := "Opimized".opimized[#i + 1];
+	            
+	//             "Opimized".opimized[#i].State.Error := NOT "Opimized".opimized[#i].State.Error;
+	//             "Opimized".opimized[#i].State.Warning := "Opimized".opimized[#i].State.Error AND NOT "Opimized".opimized[#i].State.Error;
+	//             "Opimized".opimized[#i].State.Interlocked := "Opimized".opimized[#i].State.Error AND NOT "Opimized".opimized[#i].State.Error;
+	//             "Opimized".opimized[#i].State.Ready := "Opimized".opimized[#i].State.Error AND NOT "Opimized".opimized[#i].State.Error;
+	//             "Opimized".opimized[#i].State.Ready := "Opimized".opimized[#i].State.Error AND NOT "Opimized".opimized[#i].State.Error;
+	//             "Opimized".opimized[#i].State.Opening := "Opimized".opimized[#i].State.Error AND NOT "Opimized".opimized[#i].State.Error;
+	//             "Opimized".opimized[#i].State.InCmdAutoClose := "Opimized".opimized[#i].State.Error AND NOT "Opimized".opimized[#i].State.Error;
+	//             ;
+	//         END_FOR;
+	//     END_FOR;
+	
+	
+	//     #FB_LTIME_opt := RUNTIME(#MEM_RUNTIME_opt) * 1000.0;
+	// END_REGION
+	
+	
+	
+	// REGION _name_
+	
+	//     #FB_LTIME_notopt_tmp := RUNTIME(#MEM_RUNTIME_notopt) * 1000.0;
+	//     FOR #j := 1 TO 10 DO
+	//         FOR #i := 1 TO 499 DO
+	//             // Statement section FOR
+	//             // "Not_opimized".Not_opimized[#i] := "Not_opimized".Not_opimized[#i + 1];
+	            
+	//             "Not_opimized".Not_opimized[#i].State.Error := NOT "Not_opimized".Not_opimized[#i].State.Error;
+	//             "Not_opimized".Not_opimized[#i].State.Warning := "Not_opimized".Not_opimized[#i].State.Error AND NOT "Not_opimized".Not_opimized[#i].State.Error;
+	//             "Not_opimized".Not_opimized[#i].State.Interlocked := "Not_opimized".Not_opimized[#i].State.Error AND NOT "Not_opimized".Not_opimized[#i].State.Error;
+	//             "Not_opimized".Not_opimized[#i].State.Ready := "Not_opimized".Not_opimized[#i].State.Error AND NOT "Not_opimized".Not_opimized[#i].State.Error;
+	//             "Not_opimized".Not_opimized[#i].State.Ready := "Not_opimized".Not_opimized[#i].State.Error AND NOT "Not_opimized".Not_opimized[#i].State.Error;
+	//             "Not_opimized".Not_opimized[#i].State.Opening := "Not_opimized".Not_opimized[#i].State.Error AND NOT "Not_opimized".Not_opimized[#i].State.Error;
+	//             "Not_opimized".Not_opimized[#i].State.InCmdAutoClose := "Not_opimized".Not_opimized[#i].State.Error AND NOT "Not_opimized".Not_opimized[#i].State.Error;
+	//             ;
+	            
+	//         END_FOR;
+	//     END_FOR;
+	
+	
+	//     #FB_LTIME_notopt := RUNTIME(#MEM_RUNTIME_notopt) * 1000.0;
+	// END_REGION
+	
+END_FUNCTION_BLOCK
+

@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V16" />
+  <DocumentInfo>
+    <Created>2021-06-17T11:14:32.0828374Z</Created>
+    <ExportSetting>WithDefaults</ExportSetting>
+    <InstalledProducts>
+      <Product>
+        <DisplayName>Totally Integrated Automation Portal</DisplayName>
+        <DisplayVersion>V16 Update 4</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>TIA Portal Version Control Interface</DisplayName>
+        <DisplayVersion>V16 Update 2</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>TIA Portal Openness</DisplayName>
+        <DisplayVersion>V16 Update 4</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>SINAMICS Startdrive Advanced</DisplayName>
+        <DisplayVersion>V16 Update 5</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>SINAMICS Startdrive G130, G150, S120, S150, SINAMICS MV, S210</DisplayName>
+        <DisplayVersion>V16 Update 5</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>SINAMICS Startdrive G110M, G120, G120C, G120D, G120P, G115D</DisplayName>
+        <DisplayVersion>V16 Update 5</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>STEP 7 Professional</DisplayName>
+        <DisplayVersion>V16 Update 4</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>SIMATIC Energy Suite</DisplayName>
+        <DisplayVersion>V16 Update 4</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>STEP 7 Safety</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>WinCC Advanced / Unified PC</DisplayName>
+        <DisplayVersion>V16 Update 4</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>SIMATIC Visualization Architect</DisplayName>
+        <DisplayVersion>V16 Update 1</DisplayVersion>
+      </OptionPackage>
+    </InstalledProducts>
+  </DocumentInfo>
+  <SW.Blocks.InstanceDB ID="0">
+    <AttributeList>
+      <AutoNumber>true</AutoNumber>
+      <DBAccessibleFromOPCUA>true</DBAccessibleFromOPCUA>
+      <HeaderAuthor />
+      <HeaderFamily />
+      <HeaderName />
+      <HeaderVersion>0.1</HeaderVersion>
+      <InstanceOfName>Runtime_test_1</InstanceOfName>
+      <InstanceOfType>FB</InstanceOfType>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v4">
+  <Section Name="Input" />
+  <Section Name="Output" />
+  <Section Name="InOut" />
+  <Section Name="Static">
+    <Member Name="FB_LTIME_opt" Datatype="LReal" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList></Member>
+    <Member Name="FB_LTIME_notopt" Datatype="LReal" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList></Member>
+    <Member Name="MEM_RUNTIME_opt" Datatype="LReal" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList></Member>
+    <Member Name="MEM_RUNTIME_notopt" Datatype="LReal" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList></Member>
+    <Member Name="FB_LTIME_notopt_tmp" Datatype="LReal" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList></Member>
+    <Member Name="FB_LTIME_opt_tmp" Datatype="LReal" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList></Member>
+    <Member Name="opimized" Datatype="Array[0..500] of &quot;UDT_ACB_ETI&quot;" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Sections><Section Name="None"><Member Name="ID" Datatype="Int" /><Member Name="CLSID" Datatype="Word" /><Member Name="Mode" Datatype="&quot;Mode&quot;"><Sections><Section Name="None"><Member Name="Independent" Datatype="Bool" /><Member Name="Disable" Datatype="Bool" /><Member Name="Auto" Datatype="Bool" /><Member Name="ManualRemote" Datatype="Bool" /><Member Name="ManualLocal" Datatype="Bool" /><Member Name="Service" Datatype="Bool" /><Member Name="Repair" Datatype="Bool" /><Member Name="Simulation" Datatype="Bool" /><Member Name="Different" Datatype="Bool" /></Section></Sections></Member><Member Name="State" Datatype="Struct"><Member Name="Error" Datatype="Bool" /><Member Name="Warning" Datatype="Bool" /><Member Name="Maintenance" Datatype="Bool" /><Member Name="Interlocked" Datatype="Bool" /><Member Name="Ready" Datatype="Bool" /><Member Name="Closed" Datatype="Bool" /><Member Name="Opened" Datatype="Bool" /><Member Name="Closing" Datatype="Bool" /><Member Name="Opening" Datatype="Bool" /><Member Name="InCmdAutoClose" Datatype="Bool" /><Member Name="InCmdAutoOpen" Datatype="Bool" /><Member Name="SigOutOpen" Datatype="Bool" /><Member Name="SigOutClose" Datatype="Bool" /></Member><Member Name="Alarm" Datatype="Struct"><Member Name="InterlockingBypassed" Datatype="Bool" /><Member Name="InterlockBypassed" Datatype="Bool" /><Member Name="ErrTimeOut" Datatype="Bool" /><Member Name="ExtWarning" Datatype="Bool" /><Member Name="ExtError" Datatype="Bool" /><Member Name="PreAlarm" Datatype="Bool" /><Member Name="SystemFault" Datatype="Bool" /><Member Name="TripLT" Datatype="Bool" /><Member Name="TripST" Datatype="Bool" /><Member Name="ErrClosing" Datatype="Bool" /><Member Name="ErrOpening" Datatype="Bool" /><Member Name="ErrPlaus" Datatype="Bool" /><Member Name="MaintACT" Datatype="Bool" /><Member Name="MaintTIME" Datatype="Bool" /><Member Name="EstopLocal" Datatype="Bool" /><Member Name="EstopHMI" Datatype="Bool" /><Member Name="FaultSuppyBox" Datatype="Bool" /></Member><Member Name="CMD" Datatype="Int" /><Member Name="PRM" Datatype="Struct"><Member Name="W" Datatype="Struct"><Member Name="ManLocalPirority" Datatype="Bool" /><Member Name="AutoAskErrors" Datatype="Bool" /><Member Name="LockExtModeChange" Datatype="Bool" /><Member Name="InterlockBypass" Datatype="Bool" /><Member Name="InterlockAutoReset" Datatype="Bool" /></Member><Member Name="enableExternalErrors" Datatype="Word" /><Member Name="bypassInterlocks" Datatype="Word" /><Member Name="spTimeOut" Datatype="Int" /><Member Name="spTimeOnDelAuto" Datatype="Int" /><Member Name="spTimeOffDelAuto" Datatype="Int" /><Member Name="spTimeRestart" Datatype="Int" /><Member Name="spTimeFixError" Datatype="Int" /><Member Name="spTimeCmdCloseOpen" Datatype="Int" /><Member Name="spMaintTimeOperPeriod" Datatype="DInt" /><Member Name="spMaintActivPeriod" Datatype="DInt" /><Member Name="spare48" Datatype="Int" /></Member><Member Name="Counters" Datatype="Struct"><Member Name="cvMaintTimeOperPeriodTOT" Datatype="DInt" /><Member Name="cvMaintTimeOperPeriodrLAST" Datatype="DInt" /><Member Name="cvMaintActivPeriodTOT" Datatype="DInt" /><Member Name="cvMaintActivPeriodLAST" Datatype="DInt" /><Member Name="cvError" Datatype="DInt" /><Member Name="cvWarning" Datatype="DInt" /></Member><Member Name="Simualtion" Datatype="Struct"><Member Name="Enable" Datatype="Struct"><Member Name="IB_EstopLocal" Datatype="Bool" /><Member Name="IB_EstopHMI" Datatype="Bool" /><Member Name="IB_SuppyBox_Ok" Datatype="Bool" /><Member Name="IB_15_TripLT" Datatype="Bool" /><Member Name="IB_26_SystemAlarm" Datatype="Bool" /><Member Name="IB_25_TripST" Datatype="Bool" /><Member Name="IB_06_PreAlarmPTA" Datatype="Bool" /><Member Name="IW_Interlocks" Datatype="Bool" /><Member Name="IW_ExternalError" Datatype="Bool" /><Member Name="IB_ExternalWarning" Datatype="Bool" /><Member Name="IB_CmdAutoClose" Datatype="Bool" /><Member Name="IB_CmdAutoOpen" Datatype="Bool" /><Member Name="IB_CmdManualLocal" Datatype="Bool" /><Member Name="IB_CmdManLocalClose" Datatype="Bool" /><Member Name="IB_CmdManLocalOpen" Datatype="Bool" /></Member><Member Name="spTimeSimFeedbackOnDelay" Datatype="Int" /></Member><Member Name="HMI_DATA" Datatype="&quot;ACB_ETI_HMI&quot;"><Sections><Section Name="None"><Member Name="QD_ST" Datatype="DWord" /><Member Name="QD_AL" Datatype="DWord" /><Member Name="QD_EE" Datatype="DWord" /><Member Name="QD_IL" Datatype="DWord" /><Member Name="QI_InterlockedByID" Datatype="Word" /><Member Name="QD_PRM" Datatype="DWord" /><Member Name="QD_ST_SIM" Datatype="DWord" /></Section></Sections></Member></Section></Sections></Member>
+  </Section>
+</Sections></Interface>
+      <Name>Runtime_test_1_DB</Name>
+      <Number>5</Number>
+      <ProgrammingLanguage>DB</ProgrammingLanguage>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="3" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="4" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.InstanceDB>
+</Document>
