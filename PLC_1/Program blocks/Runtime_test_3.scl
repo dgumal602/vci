@@ -26,7 +26,7 @@ BEGIN
 	        FOR #i := 1 TO 499 DO
 	            // Statement section FOR
 	            // opimized[#i] := opimized[#i + 1];
-	            
+	            // opimized[#i] := opimized[#i + 1];
 	            #opimized[#i].State.Error := NOT #opimized[#i].State.Error;
 	            #opimized[#i].State.Warning := #opimized[#i].State.Error AND NOT #opimized[#i].State.Error;
 	            #opimized[#i].State.Interlocked := #opimized[#i].State.Error AND NOT #opimized[#i].State.Error;
